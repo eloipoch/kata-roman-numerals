@@ -37,6 +37,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
             '5' => ['expectedRomanNumber' => 'V',   'arabicNumber' => 5],
             '6' => ['expectedRomanNumber' => 'VI',  'arabicNumber' => 6],
+            '7' => ['expectedRomanNumber' => 'VII', 'arabicNumber' => 7],
         ];
     }
 }
