@@ -39,7 +39,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
             '6'  => ['expectedRomanNumber' => 'VI',   'arabicNumber' => 6],
             '7'  => ['expectedRomanNumber' => 'VII',  'arabicNumber' => 7],
             '8'  => ['expectedRomanNumber' => 'VIII', 'arabicNumber' => 8],
-
+            '9'  => ['expectedRomanNumber' => 'IX',   'arabicNumber' => 9],
             '10' => ['expectedRomanNumber' => 'X',    'arabicNumber' => 10],
 
             '20' => ['expectedRomanNumber' => 'XX',   'arabicNumber' => 20],
