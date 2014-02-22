@@ -30,7 +30,8 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     public static function provideArabicNumbersWithItsExpectations()
     {
         return [
-            '0' => ['expectedRomanNumber' => '', 'arabicNumber' => 0],
+            '0' => ['expectedRomanNumber' => '',  'arabicNumber' => 0],
+            '1' => ['expectedRomanNumber' => 'I', 'arabicNumber' => 1],
         ];
     }
 }
