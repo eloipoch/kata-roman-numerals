@@ -11,13 +11,13 @@ class RomanNumerals
     {
         $romanNumber = '';
 
-        if (5 === $arabicNumber) {
+        if ($arabicNumber >= 5) {
             $romanNumber  = 'V';
-            $arabicNumber = '';
+            $arabicNumber -= 5;
         }
 
         if (is_int($arabicNumber)) {
-            $romanNumber = str_repeat('I', $arabicNumber);
+            $romanNumber .= str_repeat('I', $arabicNumber);
         }
 
         return $romanNumber;
