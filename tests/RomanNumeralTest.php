@@ -7,11 +7,21 @@ use PHPUnit_Framework_TestCase;
 
 class RomanNumeralTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var RomanNumeral
+     */
+    private $romanNumerals;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->romanNumerals = new RomanNumeral();
+    }
+
     public function testItCanBeInitialized()
     {
-        $romanNumerals = new RomanNumeral();
-
-        $this->assertInstanceOf(RomanNumeral::class, $romanNumerals);
+        $this->assertInstanceOf(RomanNumeral::class, $this->romanNumerals);
     }
 
     /**
@@ -22,9 +32,7 @@ class RomanNumeralTest extends PHPUnit_Framework_TestCase
      */
     public function testICanConvertNumbersFromArabic($expectedRomanNumber, $arabicNumber)
     {
-        $romanNumerals = new RomanNumeral();
-
-        $this->assertSame($expectedRomanNumber, $romanNumerals->fromArabic($arabicNumber));
+        $this->assertSame($expectedRomanNumber, $this->romanNumerals->fromArabic($arabicNumber));
     }
 
     public static function provideArabicNumbersWithItsExpectations()
