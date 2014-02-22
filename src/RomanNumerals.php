@@ -9,6 +9,12 @@ class RomanNumerals
      */
     public function fromArabic($arabicNumber)
     {
-        return '';
+        $romanNumber = '';
+
+        if (1 === $arabicNumber) {
+            $romanNumber = 'I';
+        }
+
+        return $romanNumber;
     }
 }
