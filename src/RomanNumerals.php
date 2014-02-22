@@ -33,8 +33,8 @@ class RomanNumerals
     {
         $romanNumber = '';
 
-        foreach ($this->arabicConversions as $arabicNumber => $conversion) {
-            $romanNumber .= $this->convertArabic($arabicNumberToConvert, $arabicNumber, $conversion);
+        foreach ($this->arabicConversions as $digit => $glyph) {
+            $romanNumber .= $this->convertArabic($arabicNumberToConvert, $digit, $glyph);
         }
 
         return $romanNumber;
@@ -42,20 +42,20 @@ class RomanNumerals
 
     /**
      * @param int    $arabicNumber
-     * @param int    $quantity
-     * @param string $symbol
+     * @param int    $digit
+     * @param string $glyph
      *
      * @return string
      */
-    private function convertArabic(&$arabicNumber, $quantity, $symbol)
+    private function convertArabic(&$arabicNumber, $digit, $glyph)
     {
         $romanNumber = '';
 
-        if ($arabicNumber >= $quantity) {
-            $remainder           = $arabicNumber % $quantity;
-            $numberOfConversions = ($arabicNumber - $remainder) / $quantity;
+        if ($arabicNumber >= $digit) {
+            $remainder           = $arabicNumber % $digit;
+            $numberOfConversions = ($arabicNumber - $remainder) / $digit;
 
-            $romanNumber  = str_repeat($symbol, $numberOfConversions);
+            $romanNumber  = str_repeat($glyph, $numberOfConversions);
             $arabicNumber = $remainder;
         }
 
