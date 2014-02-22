@@ -5,12 +5,21 @@ namespace EloiPoch;
 class RomanNumerals
 {
     /**
+     * @var array
+     */
+    private $arabicConversions = [
+        10 => 'X',
+        5  => 'V',
+    ];
+
+    /**
      * @param int $arabicNumber
+     *
+     * @return string
      */
     public function fromArabic($arabicNumber)
     {
-        $romanNumber = $this->convertArabic10($arabicNumber);
-        $romanNumber .= $this->convertArabic5($arabicNumber);
+        $romanNumber = $this->executeArabicConversions($arabicNumber);
 
         if (is_int($arabicNumber)) {
             $romanNumber .= str_repeat('I', $arabicNumber);
@@ -20,28 +29,25 @@ class RomanNumerals
     }
 
     /**
-     * @param $arabicNumber
+     * @param int $arabicNumberToConvert
      *
-     * @return array
+     * @return string
      */
-    private function convertArabic10(&$arabicNumber)
+    private function executeArabicConversions(&$arabicNumberToConvert)
     {
-        return $this->convertArabic($arabicNumber, 10, 'X');
+        $romanNumber = '';
+
+        foreach ($this->arabicConversions as $arabicNumber => $conversion) {
+            $romanNumber .= $this->convertArabic($arabicNumberToConvert, $arabicNumber, $conversion);
+        }
+
+        return $romanNumber;
     }
 
     /**
-     * @param $arabicNumber
-     *
-     * @return array
-     */
-    private function convertArabic5(&$arabicNumber)
-    {
-        return $this->convertArabic($arabicNumber, 5, 'V');
-    }
-
-    /**
-     * @param int $arabicNumber
-     * @param int $quantity
+     * @param int    $arabicNumber
+     * @param int    $quantity
+     * @param string $symbol
      *
      * @return string
      */
