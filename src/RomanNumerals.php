@@ -10,6 +10,7 @@ class RomanNumerals
     private $arabicConversions = [
         10 => 'X',
         5  => 'V',
+        1  => 'I',
     ];
 
     /**
@@ -19,13 +20,7 @@ class RomanNumerals
      */
     public function fromArabic($arabicNumber)
     {
-        $romanNumber = $this->executeArabicConversions($arabicNumber);
-
-        if (is_int($arabicNumber)) {
-            $romanNumber .= str_repeat('I', $arabicNumber);
-        }
-
-        return $romanNumber;
+        return $this->executeArabicConversions($arabicNumber);
     }
 
     /**
