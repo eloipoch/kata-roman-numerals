@@ -9,5 +9,6 @@ class RomanNumerals
      */
     public function fromArabic($arabicNumber)
     {
+        return '';
     }
 }
