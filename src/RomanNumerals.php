@@ -12,7 +12,7 @@ class RomanNumerals
         $romanNumber = $this->convertArabic10($arabicNumber);
 
         if ($arabicNumber >= 5) {
-            $romanNumber  = 'V';
+            $romanNumber = 'V';
             $arabicNumber -= 5;
         }
 
@@ -30,11 +30,22 @@ class RomanNumerals
      */
     private function convertArabic10(&$arabicNumber)
     {
+        return $this->convertArabic($arabicNumber, 10, 'X');
+    }
+
+    /**
+     * @param int $arabicNumber
+     * @param int $quantity
+     *
+     * @return string
+     */
+    private function convertArabic(&$arabicNumber, $quantity, $symbol)
+    {
         $romanNumber = '';
 
-        if ($arabicNumber >= 10) {
-            $romanNumber = 'X';
-            $arabicNumber -= 10;
+        if ($arabicNumber >= $quantity) {
+            $romanNumber = $symbol;
+            $arabicNumber -= $quantity;
         }
 
         return $romanNumber;
