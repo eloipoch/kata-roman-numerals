@@ -2,16 +2,16 @@
 
 namespace EloiPoch\Test;
 
-use EloiPoch\RomanNumerals;
+use EloiPoch\RomanNumeral;
 use PHPUnit_Framework_TestCase;
 
-class RomanNumeralsTest extends PHPUnit_Framework_TestCase
+class RomanNumeralTest extends PHPUnit_Framework_TestCase
 {
     public function testItCanBeInitialized()
     {
-        $romanNumerals = new RomanNumerals();
+        $romanNumerals = new RomanNumeral();
 
-        $this->assertInstanceOf(RomanNumerals::class, $romanNumerals);
+        $this->assertInstanceOf(RomanNumeral::class, $romanNumerals);
     }
 
     /**
@@ -22,7 +22,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
      */
     public function testICanConvertNumbersFromArabic($expectedRomanNumber, $arabicNumber)
     {
-        $romanNumerals = new RomanNumerals();
+        $romanNumerals = new RomanNumeral();
 
         $this->assertSame($expectedRomanNumber, $romanNumerals->fromArabic($arabicNumber));
     }
@@ -52,4 +52,3 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         ];
     }
 }
- 

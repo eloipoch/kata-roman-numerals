@@ -2,7 +2,7 @@
 
 namespace EloiPoch;
 
-class RomanNumerals
+class RomanNumeral
 {
     /**
      * @var array
@@ -38,7 +38,7 @@ class RomanNumerals
      *
      * @return string
      */
-    private function executeArabicConversions(&$arabicNumberToConvert)
+    private function executeArabicConversions($arabicNumberToConvert)
     {
         $romanNumber = '';
 
