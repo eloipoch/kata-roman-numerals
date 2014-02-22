@@ -10,11 +10,7 @@ class RomanNumerals
     public function fromArabic($arabicNumber)
     {
         $romanNumber = $this->convertArabic10($arabicNumber);
-
-        if ($arabicNumber >= 5) {
-            $romanNumber = 'V';
-            $arabicNumber -= 5;
-        }
+        $romanNumber .= $this->convertArabic5($arabicNumber);
 
         if (is_int($arabicNumber)) {
             $romanNumber .= str_repeat('I', $arabicNumber);
@@ -31,6 +27,16 @@ class RomanNumerals
     private function convertArabic10(&$arabicNumber)
     {
         return $this->convertArabic($arabicNumber, 10, 'X');
+    }
+
+    /**
+     * @param $arabicNumber
+     *
+     * @return array
+     */
+    private function convertArabic5(&$arabicNumber)
+    {
+        return $this->convertArabic($arabicNumber, 5, 'V');
     }
 
     /**
