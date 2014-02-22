@@ -56,8 +56,11 @@ class RomanNumerals
         $romanNumber = '';
 
         if ($arabicNumber >= $quantity) {
-            $romanNumber = $symbol;
-            $arabicNumber -= $quantity;
+            $remainder           = $arabicNumber % $quantity;
+            $numberOfConversions = ($arabicNumber - $remainder) / $quantity;
+
+            $romanNumber  = str_repeat($symbol, $numberOfConversions);
+            $arabicNumber = $remainder;
         }
 
         return $romanNumber;
