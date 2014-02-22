@@ -13,5 +13,25 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(RomanNumerals::class, $romanNumerals);
     }
+
+    /**
+     * @param $expectedRomanNumber
+     * @param $arabicNumber
+     *
+     * @dataProvider provideArabicNumbersWithItsExpectations
+     */
+    public function testICanConvertNumbersFromArabic($expectedRomanNumber, $arabicNumber)
+    {
+        $romanNumerals = new RomanNumerals();
+
+        $this->assertSame($expectedRomanNumber, $romanNumerals->fromArabic($arabicNumber));
+    }
+
+    public static function provideArabicNumbersWithItsExpectations()
+    {
+        return [
+            '0' => ['expectedRomanNumber' => '', 'arabicNumber' => 0],
+        ];
+    }
 }
  
