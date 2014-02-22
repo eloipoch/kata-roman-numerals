@@ -30,15 +30,16 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     public static function provideArabicNumbersWithItsExpectations()
     {
         return [
-            '0' => ['expectedRomanNumber' => '',     'arabicNumber' => 0],
-            '1' => ['expectedRomanNumber' => 'I',    'arabicNumber' => 1],
-            '2' => ['expectedRomanNumber' => 'II',   'arabicNumber' => 2],
-            '3' => ['expectedRomanNumber' => 'III',  'arabicNumber' => 3],
+            '0'  => ['expectedRomanNumber' => '',     'arabicNumber' => 0],
+            '1'  => ['expectedRomanNumber' => 'I',    'arabicNumber' => 1],
+            '2'  => ['expectedRomanNumber' => 'II',   'arabicNumber' => 2],
+            '3'  => ['expectedRomanNumber' => 'III',  'arabicNumber' => 3],
 
-            '5' => ['expectedRomanNumber' => 'V',    'arabicNumber' => 5],
-            '6' => ['expectedRomanNumber' => 'VI',   'arabicNumber' => 6],
-            '7' => ['expectedRomanNumber' => 'VII',  'arabicNumber' => 7],
-            '8' => ['expectedRomanNumber' => 'VIII', 'arabicNumber' => 8],
+            '5'  => ['expectedRomanNumber' => 'V',    'arabicNumber' => 5],
+            '6'  => ['expectedRomanNumber' => 'VI',   'arabicNumber' => 6],
+            '7'  => ['expectedRomanNumber' => 'VII',  'arabicNumber' => 7],
+            '8'  => ['expectedRomanNumber' => 'VIII', 'arabicNumber' => 8],
+            '10' => ['expectedRomanNumber' => 'X',    'arabicNumber' => 10],
         ];
     }
 }
