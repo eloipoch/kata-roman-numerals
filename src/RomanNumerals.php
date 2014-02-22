@@ -11,8 +11,8 @@ class RomanNumerals
     {
         $romanNumber = '';
 
-        if (1 === $arabicNumber) {
-            $romanNumber = 'I';
+        if (is_int($arabicNumber)) {
+            $romanNumber = str_repeat('I', $arabicNumber);
         }
 
         return $romanNumber;
